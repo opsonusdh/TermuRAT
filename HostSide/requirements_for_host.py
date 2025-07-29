@@ -91,7 +91,7 @@ def visualize_data(data, indent=0, prefix='', count_st = 0):
         for key, value in parsed.items():
             if isinstance(value, (dict, list)):
                 print(f"{space}\033[96m• {key}:\033[0m")
-                visualize_json(value, indent + 1, prefix=key)
+                visualize_data(value, indent + 1, prefix=key)
             else:
                 print(f"{space}\033[95m{key}: \033[92m{value}\033[0m")
 
@@ -102,12 +102,12 @@ def visualize_data(data, indent=0, prefix='', count_st = 0):
                 for k, v in item.items():
                     if isinstance(v, (dict, list)):
                         print(f"{space}    \033[96m{k}:")
-                        visualize_json(v, indent + 2)
+                        visualize_data(v, indent + 2)
                     else:
                         print(f"{space}    \033[95m{k}: \033[32m{v}\033[0m")
             elif isinstance(item, list):
                 print(f"{space}\033[93m{count_st+i}.\033[0m (Nested list):")
-                visualize_json(item, indent + 1)
+                visualize_data(item, indent + 1)
             else:
                 print(f"{space}\033[93m{count_st+i}) \033[92m{item}\033[0m")
     else:
