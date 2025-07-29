@@ -122,8 +122,8 @@ while True:
             c = received['command']
             c = c.replace("/","_")
             file_path = f"logs/{received['time']} | {c}.txt"
-              run(f"touch '{file_path}'", shell=True)
-              with open(file_path, "w") as file:
+            run(f"touch '{file_path}'", shell=True)
+            with open(file_path, "w") as file:
                    file.write(received.get("info", ""))
         visualize_data(received.get("info", ""))
     inp_txt = f"\033[92m┌──(\033[94m{dev_inf}\033[92m)-[\033[0m\033[1m{path}\033[0m\033[92m]\n\033[92m└─\033[94m$\033[0m "
