@@ -164,6 +164,7 @@ termurat exit -h [Internal command of TermuRAT to exit the program]
 - 🤖 Heavily dependent on Termux:API (some devices or versions might lack support)
 - 👁️ Easily detectable by someone opening Termux and seeing output or history
 - 💥 Can break if Gist is deleted, token revoked, or GitHub throws a tantrum
+- - 🔗 A single host can control only **one target per Gist pair** (no multi-target support out of the box)
 
 > Think of TermuRAT as a stealthy intern—it’ll do your bidding, but it won’t take over the world. Yet.
 
