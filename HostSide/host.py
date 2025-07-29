@@ -51,7 +51,7 @@ else:
     with open("last_connection_time", "w") as file:
         file.write(t)
 
-print(f"Save the following data in the target device's data.json:\n\n{data}")
+print(f"Save the following data in the target device's data.json:\n\n{str(data).replace("'",'"')}")
 input("\nCompleted? Press Enter: ")
 run("clear", shell=True)
 
@@ -75,7 +75,7 @@ while True:
     received = read_gist(data["to_host_gist_id"])
     
     received = json.loads(received)
-    if received.get("time") == last_received_time:
+    if received.get("time") == last_received_time or not recieved:
         time.sleep(3)
         continue
     
