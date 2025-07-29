@@ -75,7 +75,7 @@ while True:
     received = read_gist(data["to_host_gist_id"])
     
     received = json.loads(received)
-    if received.get("time") == last_received_time or not recived:
+    if received.get("time") == last_received_time or not received:
         time.sleep(3)
         continue
     
