@@ -151,3 +151,29 @@ whoami [Display the current user (usually u0_aXXX in Termux)]
 
 termurat exit -h [Internal command of TermuRAT to exit the program]
 
+
+## ❌ Cons (a.k.a. Why TermuRAT Isn't God Mode... Yet)
+
+- 📱 Requires Termux to be **open and running** on the target (no background daemon magic)
+- 🐢 Kinda slow due to polling + GitHub latency (not for real-time thrills)
+- 🔑 Needs a valid **GitHub token** with Gist access (and could get rate-limited or flagged)
+- 🌐 Requires internet access on both sides (obviously)
+- 🧠 No built-in encryption (commands and responses are plain JSON unless you DIY it)
+- 🔒 Cannot bypass Android permission prompts (Termux:API features may require manual grants)
+- 🚫 No persistence out-of-the-box (won’t auto-restart after reboot unless you rig it)
+- 🤖 Heavily dependent on Termux:API (some devices or versions might lack support)
+- 👁️ Easily detectable by someone opening Termux and seeing output or history
+- 💥 Can break if Gist is deleted, token revoked, or GitHub throws a tantrum
+
+> Think of TermuRAT as a stealthy intern—it’ll do your bidding, but it won’t take over the world. Yet.
+
+
+## 🧠 Final Words
+
+TermuRAT is a proof of concept that shows how simple tools can be repurposed for powerful, stealthy control—without fancy exploits, just creativity and clever abuse of APIs. While it’s not a military-grade RAT, it gets the job done quietly, like a whisper in the terminal.
+
+Use it wisely. Use it ethically. Or don’t—just don’t get caught.
+
+
+
+**Built with Python, powered by GitHub, operated through Termux.** 
