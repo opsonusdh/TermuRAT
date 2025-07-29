@@ -26,7 +26,7 @@ if data.get("to_target_gist_id", "") == "":
         "time": time.strftime("%d-%m-%Y_%H:%M:%S"),
         "command": "termux-telephony-deviceinfo"
     }
-    gist_url = create_gist("to_target.json", json.dumps(command_data))
+    gist_url = create_gist("to_target.json", command_data)
     gist_id = gist_url.split("/")[-1]
     data["to_target_gist_id"] = gist_id
     save_data(data)
@@ -39,7 +39,7 @@ if data.get("to_host_gist_id", "") == "":
         "info": "",
         "deviceinfo": "N/A",
     }
-    gist_url = create_gist("to_host.json", json.dumps(init_data))
+    gist_url = create_gist("to_host.json", init_data)
     gist_id = gist_url.split("/")[-1]
     data["to_host_gist_id"] = gist_id
     save_data(data)
