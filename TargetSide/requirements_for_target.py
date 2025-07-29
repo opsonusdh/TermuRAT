@@ -2,6 +2,7 @@ import time,sys
 from subprocess import getoutput as output
 from subprocess import run
 import requests
+import json
 
 with open("data.json") as file:
     data = eval(file.read())
@@ -19,7 +20,7 @@ def edit_gist(gist_id, filename, content):
     payload = {
         "files": {
             filename: {
-                "content": content
+                "content": json.dumps(content)
             }
         }
     }
