@@ -103,7 +103,7 @@ python target.py
 
 After launching `target.py`, you can use various commands. Some examples are given below:
 
-```
+
 termux-toast "You’ve been hacked 😈" [Display a toast message (for fun or trolling)]
 
 termux-vibrate -d 1000 [Vibrate the device for 1 second]
@@ -138,6 +138,7 @@ df -h [Show internal storage usage stats]
 
 ls /sdcard/ [List files in the device's internal storage]
 
+termurat exit -h [internal command of TermuRAT to exit the program]
 cat /sdcard/secret.txt [Read contents of a specific file]
 
 top -n 1 [Display real-time system resource usage]
@@ -148,4 +149,6 @@ curl ifconfig.me [Get the device's public IP address]
 uptime [Check how long the device has been running]
 
 whoami [Display the current user (usually u0_aXXX in Termux)]
-```
+
+termurat exit -h [Internal command of TermuRAT to exit the program]
+
