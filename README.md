@@ -138,7 +138,6 @@ df -h [Show internal storage usage stats]
 
 ls /sdcard/ [List files in the device's internal storage]
 
-termurat exit -h [internal command of TermuRAT to exit the program]
 cat /sdcard/secret.txt [Read contents of a specific file]
 
 top -n 1 [Display real-time system resource usage]
