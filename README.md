@@ -39,4 +39,41 @@
 
 This tool is for **educational and ethical research purposes only**. Unauthorized access to devices or systems is illegal and unethical. You are responsible for how you use TermuRAT.
 
+## 🛠️ Installation
+
+### On the **Host** (Control Machine):
+```bash
+pkg update && pkg upgrade
+pkg install python git
+pip install requests
+git clone https://github.com/opsonusdh/TermuRAT
+cd TermuRAT/HostSide
+python host.py
+```
+🧠 host.py will auto-generate the required Gists and display their IDs. Like:
+```json
+{"token": "<your token>", "to_target_gist_id": "<gist_id1>", "to_host_gist_id": "<gist_id2>"}
+```
+
+Copy it and paste it in target device.
+
+
+### On the **Target Device** (Termux):
+```bash
+pkg update && pkg upgrade
+pkg install python git termux-api
+pip install requests
+git clone https://github.com/opsonusdh/TermuRAT
+cd TermuRAT/TargetSide
+nano data.json
+```
+Here you can see json like this: 
+```json
+{"token": "", "to_target_gist_id": "", "to_host_gist_id": ""}
+```
+⚠️ Make sure to paste the GitHub Token and Gist ID from host device.
+Then run
+```bash
+python target.py
+```
 
