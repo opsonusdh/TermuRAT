@@ -138,7 +138,7 @@ while True:
         print("    -l, --local: stops the programme on host device but programme on target device should not be effected,")
         print("    -h, --help: shows the help menu.")
     elif m == 'clear':
-        os.system("clear")
+        run("clear", shell=True)
     edit_gist(
         data["to_target_gist_id"],
         "to_target.json",
