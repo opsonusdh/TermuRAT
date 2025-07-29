@@ -17,7 +17,7 @@ def edit_gist(gist_id, filename, content):
     payload = {
         "files": {
             filename: {
-                "content": content
+                "content": json.dumps(content)
             }
         }
     }
