@@ -121,7 +121,7 @@ while True:
         else:
             c = received['command']
             c = c.replace("/","_")
-            file_path = f"logs/{received['time']} | {c.txt"
+            file_path = f"logs/{received['time']} | {c}.txt"
               run(f"touch '{file_path}'", shell=True)
               with open(file_path, "w") as file:
                    file.write(received.get("info", ""))
