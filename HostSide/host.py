@@ -60,10 +60,10 @@ m = input(inp_txt)
 edit_gist(
     data["to_target_gist_id"],
     "to_target.json",
-    json.dumps({
+    {
         "time": time.strftime("%d-%m-%Y_%H:%M:%S"),
         "command": m
-    })
+    }
 )
 
 
@@ -142,9 +142,9 @@ while True:
     edit_gist(
         data["to_target_gist_id"],
         "to_target.json",
-        json.dumps({
+        {
             "time": time.strftime("%d-%m-%Y_%H:%M:%S"),
             "command": m
-        })
+        }
     )
     
