@@ -45,7 +45,7 @@ while True:
     with open("last_connection_time") as file:
         last_received_time = file.read()
     deviceinfo = json.loads(output("termux-telephony-deviceinfo"))
-    if deviceinfo.get("data_state") != "connected":
+    if deviceinfo.get("data_enabled") != "true":
         continue
 
     
