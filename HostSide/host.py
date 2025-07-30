@@ -5,6 +5,12 @@ from subprocess import getoutput as output
 from subprocess import run
 from requirements_for_host import *
 
+if not data["token"]:
+    print("Github token is not given in data.json file. Aborting...")
+    sys.exit()
+
+# Clear terminal
+run("clear", shell=True)
 print("""\033[31m
 MMP""MM""YMM                                        `7MM\"""Mq.       db  MMP""MM""YMM
 P'   MM   `7                                          MM   `MM.     ;MM: P'   MM   `7
@@ -16,12 +22,6 @@ P'   MM   `7                                          MM   `MM.     ;MM: P'   MM
 
             \033[91m GitHub: https://github.com/opsonusdh/TermuRAT\033[0m\n""")
 
-if not data["token"]:
-    print("Github token is not given in data.json file. Aborting...")
-    sys.exit()
-
-# Clear terminal
-run("clear", shell=True)
 output("mkdir logs")
 dev_inf = "N/A"
 pwd_home = "/data/data/com.termux/files/home"
