@@ -5,6 +5,17 @@ from subprocess import getoutput as output
 from subprocess import run
 from requirements_for_host import *
 
+print("""\033[31m
+MMP""MM""YMM                                        `7MM\"""Mq.       db  MMP""MM""YMM
+P'   MM   `7                                          MM   `MM.     ;MM: P'   MM   `7
+     MM  .gP"Ya `7Mb,od8 `7MMpMMMb.pMMMb.`7MM  `7MM   MM   ,M9     ,V^MM.     MM     
+     MM ,M'   Yb  MM' "'   MM    MM    MM  MM    MM   MMmmdM9     ,M  `MM     MM     
+     MM 8M""""""  MM       MM    MM    MM  MM    MM   MM  YM.     AbmmmqMA    MM     
+     MM YM.    ,  MM       MM    MM    MM  MM    MM   MM   `Mb.  A'     VML   MM     
+   .JMML.`Mbmmd'.JMML.   .JMML  JMML  JMML.`Mbod"YML.JMML. .JMM.AMA.   .AMMA.JMML.   
+
+            \033[91m GitHub: https://github.com/opsonusdh/TermuRAT\033[0m"""
+
 if not data["token"]:
     print("Github token is not given in data.json file. Aborting...")
     sys.exit()
