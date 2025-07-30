@@ -14,7 +14,7 @@ P'   MM   `7                                          MM   `MM.     ;MM: P'   MM
      MM YM.    ,  MM       MM    MM    MM  MM    MM   MM   `Mb.  A'     VML   MM     
    .JMML.`Mbmmd'.JMML.   .JMML  JMML  JMML.`Mbod"YML.JMML. .JMM.AMA.   .AMMA.JMML.   
 
-            \033[91m GitHub: https://github.com/opsonusdh/TermuRAT\033[0m"""
+            \033[91m GitHub: https://github.com/opsonusdh/TermuRAT\033[0m\n"""
 
 if not data["token"]:
     print("Github token is not given in data.json file. Aborting...")
