@@ -16,11 +16,11 @@ MMP""MM""YMM                                        `7MM\"""Mq.       db  MMP""M
 P'   MM   `7                                          MM   `MM.     ;MM: P'   MM   `7
      MM  .gP"Ya `7Mb,od8 `7MMpMMMb.pMMMb.`7MM  `7MM   MM   ,M9     ,V^MM.     MM     
      MM ,M'   Yb  MM' "'   MM    MM    MM  MM    MM   MMmmdM9     ,M  `MM     MM     
-     MM 8M""""""  MM       MM    MM    MM  MM    MM   MM  YM.     AbmmmqMA    MM     
+     MM 8M\""\""\""  MM       MM    MM    MM  MM    MM   MM  YM.     AbmmmqMA    MM     
      MM YM.    ,  MM       MM    MM    MM  MM    MM   MM   `Mb.  A'     VML   MM     
    .JMML.`Mbmmd'.JMML.   .JMML  JMML  JMML.`Mbod"YML.JMML. .JMM.AMA.   .AMMA.JMML.   
 
-            \033[91m GitHub: https://github.com/opsonusdh/TermuRAT\033[0m\n""")
+              \033[91m GitHub: https://github.com/opsonusdh/TermuRAT\033[0m\n""")
 
 output("mkdir logs")
 dev_inf = "N/A"
