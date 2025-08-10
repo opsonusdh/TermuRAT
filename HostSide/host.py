@@ -12,7 +12,7 @@ if not data["token"]:
 # Clear terminal
 run("clear", shell=True)
 print("""\033[31m
-MMP""MM""YMM                                        `7MM\""Mq.       db  MMP""MM""YMM
+MMP""MM""YMM                                        `7MM\"""Mq.       db  MMP""MM""YMM
 P'   MM   `7                                          MM   `MM.     ;MM: P'   MM   `7
      MM  .gP"Ya `7Mb,od8 `7MMpMMMb.pMMMb.`7MM  `7MM   MM   ,M9     ,V^MM.     MM     
      MM ,M'   Yb  MM' "'   MM    MM    MM  MM    MM   MMmmdM9     ,M  `MM     MM     
