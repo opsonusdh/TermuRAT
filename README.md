@@ -1,4 +1,4 @@
-# TermuRAT
+# TermuRAT (v 1.2)
 
 **TermuRAT** is a stealthy, terminal-based Android Remote Access Trojan (RAT) built for Termux. It uses private GitHub Gists as a command-and-control (C2) channel, allowing remote command execution and data exfiltration without direct connections or suspicious traffic.
 
@@ -153,6 +153,8 @@ uptime [Check how long the device has been running]
 whoami [Display the current user (usually u0_aXXX in Termux)]
 
 termurat exit -h [Internal command of TermuRAT to exit the program]
+
+termurat print Hello [Prints text on target device]
 
 
 ## ❌ Cons (a.k.a. Why TermuRAT Isn't God Mode... Yet)
