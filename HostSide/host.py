@@ -161,7 +161,7 @@ while True:
     if m in ["termurat exit -l", "termurat exit --local"]:
         changed = False
         sys.exit()
-    elif m in ["termurat exit -h", "termurat exit --h"]:
+    elif m in ["termurat exit -h", "termurat exit --help"]:
         changed = False
         print("termurat exit: Exits the programme.")
         print("Use: termurat exit <options>")
@@ -172,6 +172,16 @@ while True:
     elif m in  ['termurat clear -l', "termurat clear --local"]:
         changed = False
         run("clear", shell=True)
+    elif m in ["termurat -h", "termurat --help"]:
+        changed = False
+        print("""
+termurat <COMMAND> [ARGS]
+
+COMMANDS
+       exit: Terminate the program.
+       ipinfo: Show public IP information.
+       clear: Clear the terminal screen in target device.
+       print [text]: Prints text in target device"""
     else:
         changed = True
         edit_gist(
