@@ -115,9 +115,9 @@ termux-battery-status [Get battery level, charging status, and health]
 
 termux-location [Get the device's current GPS coordinates]
 
-termux-camera-photo -c 0 [Take a photo using the front camera]
+termux-camera-photo -c 1 [Take a photo using the front camera]
  
-termux-camera-photo -c 1 [Take a photo using the rear camera]
+termux-camera-photo -c 0 [Take a photo using the rear camera]
 
 termux-sensor -l [List all available hardware sensors]
 
