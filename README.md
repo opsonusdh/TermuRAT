@@ -167,7 +167,7 @@ termurat print Hello [Prints text on target device]
 - 🔒 Cannot bypass Android permission prompts (Termux:API features may require manual grants)
 - 🚫 No persistence out-of-the-box (won’t auto-restart after reboot unless you rig it)
 - 🤖 Heavily dependent on Termux:API (some devices or versions might lack support)
-- 👁️ Easily detectable by someone opening Termux and seeing output or history
+- 👁️ Easily detectable as we are installing 2 apps in target 
 - 💥 Can break if Gist is deleted, token revoked, or GitHub throws a tantrum
 - - 🔗 A single host can control only **one target per Gist pair** (no multi-target support out of the box)
 
